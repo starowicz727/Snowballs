@@ -31,5 +31,24 @@ public class Snowball : MonoBehaviour
         this.gameObject.GetComponent<Rigidbody>().velocity = speed * this.gameObject.transform.forward;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Destroyer")
+        {
+            Destroy(this.gameObject);
+        }
+        else if (collision.gameObject.tag == "Star")
+        {
+            GameState.points += 10;
+        }
+        else if (collision.gameObject.tag == "Ball")
+        {
+            GameState.points += 5;
+        }
+        else if (alreadyThrown)
+        {
+            GameState.points -= 6;
+        }
 
+    }
 }
