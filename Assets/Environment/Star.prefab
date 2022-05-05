@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5725380560356794654}
   - component: {fileID: 1843851044902721381}
   - component: {fileID: 1001244635}
+  - component: {fileID: -6404301092929855944}
   m_Layer: 0
   m_Name: Star
   m_TagString: Star
@@ -111,3 +112,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1881125385508326797, guid: e8e4d3d6356510a43b44ea291c07d0a3, type: 3}
+--- !u!114 &-6404301092929855944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6085593695729598667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e6188e1360a52e44a681df90c3fb425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTime: 5
+  maxTime: 10
