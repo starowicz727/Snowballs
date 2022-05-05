@@ -30,4 +30,6 @@ public class Snowball : MonoBehaviour
         this.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().velocity = speed * this.gameObject.transform.forward;
     }
+
+
 }
