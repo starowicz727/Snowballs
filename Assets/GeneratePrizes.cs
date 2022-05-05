@@ -21,26 +21,28 @@ public class GeneratePrizes : MonoBehaviour
 
     private void Update()
     {
-        //odmierzanie kolejnego Instantiate dla gwiazdy
-        starInstantiateTimer += Time.deltaTime;
-        if(starInstantiateTimer >= starInstantiateT)
+        if(!GameState.endOfGame)//je¿eli gra siê jeszcze nie skoñczy³a
         {
-            RandomPosition();
-            Instantiate(star, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-            starInstantiateT = Random.RandomRange(10, 15);
-            starInstantiateTimer = 0f;
-        }
+            //odmierzanie kolejnego Instantiate dla gwiazdy
+            starInstantiateTimer += Time.deltaTime;
+            if (starInstantiateTimer >= starInstantiateT)
+            {
+                RandomPosition();
+                Instantiate(star, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
+                starInstantiateT = Random.RandomRange(10, 15);
+                starInstantiateTimer = 0f;
+            }
 
-        //odmierzanie kolejnego Instantiate dla bombki 
-        ballInstantiateTimer += Time.deltaTime;
-        if(ballInstantiateTimer >= ballInstantiateT)
-        {
-            RandomPosition();
-            Instantiate(ball, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-            ballInstantiateT = Random.RandomRange(4, 8);
-            ballInstantiateTimer = 0f;
+            //odmierzanie kolejnego Instantiate dla bombki 
+            ballInstantiateTimer += Time.deltaTime;
+            if (ballInstantiateTimer >= ballInstantiateT)
+            {
+                RandomPosition();
+                Instantiate(ball, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
+                ballInstantiateT = Random.RandomRange(4, 8);
+                ballInstantiateTimer = 0f;
+            }
         }
-        
     }
 
     private void RandomPosition() //metoda losuje X,Y i Z, u¿ywane do tworzenia Vector3 dla Instantiate
