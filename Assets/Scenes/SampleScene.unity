@@ -3717,7 +3717,7 @@ GameObject:
   - component: {fileID: 1712027593268059690}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Ball
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4137,7 +4137,7 @@ GameObject:
   - component: {fileID: 5525843457366181379}
   m_Layer: 0
   m_Name: ChristmasBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

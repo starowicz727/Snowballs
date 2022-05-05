@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour
 {
-    private float rotationsPerMinute = 80f;
+    private float rotationSpeed = 80f;
     void Update()
     {
-        transform.Rotate(0, rotationsPerMinute * Time.deltaTime, 0);
+        transform.Rotate(0, rotationSpeed * Time.deltaTime, 0);
     }
 }

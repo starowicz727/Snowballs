@@ -16,8 +16,8 @@ public class GameState : MonoBehaviour
 
     private void Update()
     {
-        DeleteDestroyedSnowballs();
-
+        DeleteDestroyedSnowballs(); //pomniejszanie listy o te œnie¿ki,
+                                    // które zosta³y zniszczone
         if (listOfSnowballs.Count == 0)
         {
             endOfGame = true;
@@ -32,7 +32,6 @@ public class GameState : MonoBehaviour
             if (listOfSnowballs[i] == null)
             {
                 listOfSnowballs.RemoveAt(i);
-                Debug.Log(i);
             }
         }
     }

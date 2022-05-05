@@ -5,9 +5,9 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Snowball : MonoBehaviour
 {
-    private float speed = 10;
-    private bool alreadyThrown;
-    private float timer;
+    private float speed = 15; //prêdkoœæ wyrzutu œnie¿ki
+    private bool alreadyThrown; //czy dana œnie¿ka zosta³a ju¿ rzucona
+    private float timer; //czas zanim œnie¿ka zostanie zniszczona
     private void Start()
     {
         alreadyThrown = false;
@@ -15,7 +15,7 @@ public class Snowball : MonoBehaviour
     }
     private void Update()
     {
-        if (alreadyThrown)
+        if (alreadyThrown)//œnie¿ki rzucone przypadkiem na np. pod³ogê bêd¹ usuniête
         {
             timer += Time.deltaTime;
             if (timer >= 5)
