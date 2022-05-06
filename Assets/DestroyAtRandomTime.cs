@@ -9,7 +9,6 @@ public class DestroyAtRandomTime : MonoBehaviour
     {
         destroyT = Random.Range(minTime, maxTime+1);
     }
-
     void Update()
     {
         destroyTimer += Time.deltaTime;

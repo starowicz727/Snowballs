@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class MenuManager : MonoBehaviour
 {
     public Button startButton;
@@ -17,7 +16,6 @@ public class MenuManager : MonoBehaviour
         }
         
         pointsTxt.text = "POINTS: " + GameState.points.ToString();
-        
     }
     public void StartButtonClick()
     {
