@@ -15,8 +15,8 @@ public class GeneratePrizes : MonoBehaviour
 
     private void Start()
     {
-        starInstantiateT = Random.RandomRange(10, 15);
-        ballInstantiateT = Random.RandomRange(4, 8);
+        starInstantiateT = Random.Range(10f, 15f);
+        ballInstantiateT = Random.Range(4f, 8f);
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class GeneratePrizes : MonoBehaviour
             {
                 RandomPosition();
                 Instantiate(star, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-                starInstantiateT = Random.RandomRange(10, 15);
+                starInstantiateT = Random.Range(10f, 15f);
                 starInstantiateTimer = 0f;
             }
 
@@ -39,7 +39,7 @@ public class GeneratePrizes : MonoBehaviour
             {
                 RandomPosition();
                 Instantiate(ball, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-                ballInstantiateT = Random.RandomRange(4, 8);
+                ballInstantiateT = Random.Range(4f, 8f);
                 ballInstantiateTimer = 0f;
             }
         }
@@ -47,34 +47,34 @@ public class GeneratePrizes : MonoBehaviour
 
     private void RandomPosition() //metoda losuje X,Y i Z, u¿ywane do tworzenia Vector3 dla Instantiate
     {
-        randomY = Random.RandomRange(0.7f, 2.5f);
+        randomY = Random.Range(0.7f, 2.5f);
 
-        int randomXorZ = Random.RandomRange(0, 2);
+        int randomXorZ = Random.Range(0, 2);
         if (randomXorZ == 0)
         {
-            int randomSide = Random.RandomRange(0, 2); //jeœli wypadnie 0 to losujemy X po stronie prawej od gracza
+            int randomSide = Random.Range(0, 2); //jeœli wypadnie 0 to losujemy X po stronie prawej od gracza
             if (randomSide == 0)
             {
-                randomX = -Random.RandomRange(1.6f, 2.6f);
+                randomX = -Random.Range(1.6f, 2.6f);
             }
             else
             {
-                randomX = Random.RandomRange(2.6f, 3.6f);
+                randomX = Random.Range(2.6f, 3.6f);
             }
-            randomZ = Random.RandomRange(0f, 8f);
+            randomZ = Random.Range(0f, 8f);
         }
         else
         {
-            int randomSide = Random.RandomRange(0, 2); //jeœli wypadnie 0 to losujemy Z za graczem
+            int randomSide = Random.Range(0, 2); //jeœli wypadnie 0 to losujemy Z za graczem
             if (randomSide == 0)
             {
-                randomZ = -Random.RandomRange(0f, 1.6f);
+                randomZ = -Random.Range(0f, 1.6f);
             }
             else
             {
-                randomZ = Random.RandomRange(7f, 8.6f);
+                randomZ = Random.Range(7f, 8.6f);
             }
-            randomX = Random.RandomRange(0f, 4f);
+            randomX = Random.Range(0f, 4f);
         }
 
     }

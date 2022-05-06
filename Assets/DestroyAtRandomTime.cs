@@ -9,7 +9,7 @@ public class DestroyAtRandomTime : MonoBehaviour
     private float destroyTimer = 0f;//odliczanie czasu do usuniêcia
     void Start()
     {
-        destroyT = Random.RandomRange(minTime, maxTime+1);
+        destroyT = Random.Range(minTime, maxTime+1);
     }
 
     void Update()
