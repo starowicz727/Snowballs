@@ -7,23 +7,11 @@ public class Snowball : MonoBehaviour
 {
     private float speed = 20; //prêdkoœæ wyrzutu œnie¿ki
     private bool alreadyThrown; //czy dana œnie¿ka zosta³a ju¿ rzucona
-    private float timer; //czas zanim œnie¿ka zostanie zniszczona
     private void Start()
     {
         alreadyThrown = false;
-        timer = 0f;
     }
-    private void Update()
-    {
-        if (alreadyThrown)//œnie¿ki rzucone przypadkiem na np. pod³ogê bêd¹ usuniête
-        {
-            timer += Time.deltaTime;
-            if (timer >= 5)
-            {
-                Destroy(this.gameObject);
-            }
-        }
-    }
+    
     public void Throw()
     {
         alreadyThrown = true;
@@ -33,13 +21,9 @@ public class Snowball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Destroyer" && !alreadyThrown) //gdy œnie¿ka nie by³a wystrzelona
-        {                                                              //ale spad³a w przepaœæ przypadkiem 
+        if ( alreadyThrown && (collision.gameObject.tag != "Ball" && collision.gameObject.tag != "Star"))
+        {   //wystrzelona œnie¿ka nie dotknê³a bombki i nie dotknê³a gwiazdy
             GameState.points -= 6;
-            Destroy(this.gameObject);
-        }
-        else if(collision.gameObject.tag == "Destroyer" && alreadyThrown) //gdy œnie¿ka spad³a w przepaœæ po wystrzale 
-        {
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Star") //gdy œnie¿ka trafi³a w gwiazdê
@@ -54,10 +38,10 @@ public class Snowball : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
-        else if (alreadyThrown) //gdy wystrzelona œnie¿ka nie uderzy³a ani w gwiazdê ani w bombkê
+        else if (collision.gameObject.tag == "Destroyer") //gdy œnie¿ka spad³a niewystrzelona w przepaœæ
         {
             GameState.points -= 6;
+            Destroy(this.gameObject);
         }
-
     }
 }
