@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -7,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     public Button startButton;
+    public Button exitButton;
     public Text pointsTxt;
 
     private void Update()
@@ -14,6 +13,7 @@ public class MenuManager : MonoBehaviour
         if(GameState.endOfGame == true)
         {
             startButton.gameObject.SetActive(true);
+            exitButton.gameObject.SetActive(true);
         }
         
         pointsTxt.text = "POINTS: " + GameState.points.ToString();
@@ -22,5 +22,9 @@ public class MenuManager : MonoBehaviour
     public void StartButtonClick()
     {
         SceneManager.LoadScene("GameScene");
+    }
+    public void ExitButtonClick()
+    {
+        Application.Quit();
     }
 }
