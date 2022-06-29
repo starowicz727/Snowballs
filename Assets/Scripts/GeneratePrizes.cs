@@ -13,10 +13,15 @@ public class GeneratePrizes : MonoBehaviour
 
     private float randomX=0, randomY=0, randomZ=0;
 
+    private float starMinTime, starMaxTime, ballMinTime, ballMaxTime;
+
     private void Start()
     {
-        starInstantiateT = Random.Range(10f, 15f);
-        ballInstantiateT = Random.Range(4f, 8f);
+        starMinTime = 10f; starMaxTime = 15f;
+        ballMinTime = 2f; ballMaxTime = 6f;
+
+        starInstantiateT = Random.Range(starMinTime, starMaxTime);
+        ballInstantiateT = Random.Range(ballMinTime, ballMaxTime);
     }
 
     private void Update()
@@ -29,7 +34,7 @@ public class GeneratePrizes : MonoBehaviour
             {
                 RandomPosition();
                 Instantiate(star, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-                starInstantiateT = Random.Range(10f, 15f);
+                starInstantiateT = Random.Range(starMinTime, starMaxTime);
                 starInstantiateTimer = 0f;
             }
 
@@ -39,7 +44,7 @@ public class GeneratePrizes : MonoBehaviour
             {
                 RandomPosition();
                 Instantiate(ball, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
-                ballInstantiateT = Random.Range(4f, 8f);
+                ballInstantiateT = Random.Range(ballMinTime, ballMaxTime);
                 ballInstantiateTimer = 0f;
             }
         }
