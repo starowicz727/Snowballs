@@ -7,6 +7,10 @@ public class Snowball : MonoBehaviour
 {
     private float speed = 40; //prêdkoœæ wyrzutu œnie¿ki
     private bool alreadyThrown; //czy dana œnie¿ka zosta³a ju¿ rzucona
+
+    private int starPoint = 10;
+    private int ballPoint = 5;
+    private int penaltyPoint = -5;
     private void Start()
     {
         alreadyThrown = false;
@@ -23,24 +27,24 @@ public class Snowball : MonoBehaviour
     {
         if ( alreadyThrown && (collision.gameObject.tag != "Ball" && collision.gameObject.tag != "Star"))
         {   //wystrzelona œnie¿ka nie dotknê³a bombki i nie dotknê³a gwiazdy
-            GameState.points -= 6;
+            GameState.points += penaltyPoint;
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Star") //gdy œnie¿ka trafi³a w gwiazdê
         {
-            GameState.points += 10;
+            GameState.points += starPoint;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Ball") //gdy œnie¿ka trafi³a w bombkê 
         {
-            GameState.points += 5;
+            GameState.points += ballPoint;
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Destroyer") //gdy œnie¿ka spad³a niewystrzelona w przepaœæ
         {
-            GameState.points -= 6;
+            GameState.points += penaltyPoint;
             Destroy(this.gameObject);
         }
     }
