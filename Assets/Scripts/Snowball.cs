@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Snowball : MonoBehaviour
 {
-    private float speed = 20; //prêdkoœæ wyrzutu œnie¿ki
+    private float speed = 40; //prêdkoœæ wyrzutu œnie¿ki
     private bool alreadyThrown; //czy dana œnie¿ka zosta³a ju¿ rzucona
     private void Start()
     {
