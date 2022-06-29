@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class Snowball : MonoBehaviour
 {
+    public GameObject confetti;
+
     private float speed = 40; //prêdkoœæ wyrzutu œnie¿ki
     private bool alreadyThrown; //czy dana œnie¿ka zosta³a ju¿ rzucona
 
@@ -33,12 +35,14 @@ public class Snowball : MonoBehaviour
         else if (collision.gameObject.tag == "Star") //gdy œnie¿ka trafi³a w gwiazdê
         {
             GameState.points += starPoint;
+            Instantiate(confetti, this.transform.position, Quaternion.identity).GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Ball") //gdy œnie¿ka trafi³a w bombkê 
         {
             GameState.points += ballPoint;
+            Instantiate(confetti, this.transform.position, Quaternion.identity).GetComponent<ParticleSystem>().Play();
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }

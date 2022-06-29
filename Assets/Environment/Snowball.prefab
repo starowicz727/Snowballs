@@ -255,3 +255,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b4f6f2b36d210498e3b319fd9defa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confetti: {fileID: 7326907281868379862, guid: 60850ea7755c0034b8839d124f9767d7, type: 3}
