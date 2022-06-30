@@ -6,7 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Snowball : MonoBehaviour
 {
     public GameObject confetti;
-    public AudioClip throwSound;
     private AudioSource audioSource;
 
     private float speed = 40; //prêdkoœæ wyrzutu œnie¿ki
@@ -23,7 +22,6 @@ public class Snowball : MonoBehaviour
     
     public void Throw()
     {
-        audioSource.clip = throwSound;
         audioSource.Play();
 
         alreadyThrown = true;
@@ -41,14 +39,20 @@ public class Snowball : MonoBehaviour
         else if (collision.gameObject.tag == "Star") //gdy œnie¿ka trafi³a w gwiazdê
         {
             GameState.points += starPoint;
+
             Instantiate(confetti, this.transform.position, Quaternion.identity).GetComponent<ParticleSystem>().Play();
+            confetti.GetComponent<AudioSource>().Play();
+
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
         else if (collision.gameObject.tag == "Ball") //gdy œnie¿ka trafi³a w bombkê 
         {
             GameState.points += ballPoint;
+
             Instantiate(confetti, this.transform.position, Quaternion.identity).GetComponent<ParticleSystem>().Play();
+            confetti.GetComponent<AudioSource>().Play();
+
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
         }
@@ -58,4 +62,5 @@ public class Snowball : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

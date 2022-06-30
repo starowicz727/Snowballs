@@ -17,6 +17,8 @@ public class DestroyAtRandomTime : MonoBehaviour
         if(destroyTimer >= destroyT)
         {
             Instantiate(sadConfetti, this.transform.position, Quaternion.identity).GetComponent<ParticleSystem>().Play();
+            sadConfetti.GetComponent<AudioSource>().Play();
+
             Destroy(this.gameObject);
         }
     }
