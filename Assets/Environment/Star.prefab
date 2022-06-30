@@ -124,5 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6188e1360a52e44a681df90c3fb425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sadConfetti: {fileID: 5466612263149620953, guid: ab29322a068b6624882c2b09d2839073, type: 3}
   minTime: 5
   maxTime: 10

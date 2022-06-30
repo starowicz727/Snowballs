@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class DestroyAtRandomTime : MonoBehaviour
 {
+    public GameObject sadConfetti;
+
     public int minTime, maxTime;
     private float destroyT; //po jakim czasie ma nast¹piæ usuniêcie obiektu
     private float destroyTimer = 0f;//odliczanie czasu do usuniêcia
@@ -14,6 +16,7 @@ public class DestroyAtRandomTime : MonoBehaviour
         destroyTimer += Time.deltaTime;
         if(destroyTimer >= destroyT)
         {
+            Instantiate(sadConfetti, this.transform.position, Quaternion.identity).GetComponent<ParticleSystem>().Play();
             Destroy(this.gameObject);
         }
     }
