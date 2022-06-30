@@ -6,6 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Snowball : MonoBehaviour
 {
     public GameObject confetti;
+    private AudioSource audioSource;
 
     private float speed = 40; //prêdkoœæ wyrzutu œnie¿ki
     private bool alreadyThrown; //czy dana œnie¿ka zosta³a ju¿ rzucona
@@ -16,10 +17,13 @@ public class Snowball : MonoBehaviour
     private void Start()
     {
         alreadyThrown = false;
+        audioSource = gameObject.AddComponent<AudioSource>();
     }
     
     public void Throw()
     {
+        audioSource.clip = Resources.Load("throw") as AudioClip;
+
         alreadyThrown = true;
         this.gameObject.GetComponent<XRGrabInteractable>().enabled = false;
         this.gameObject.GetComponent<Rigidbody>().velocity = speed * this.gameObject.transform.forward;
