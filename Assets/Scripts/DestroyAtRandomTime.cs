@@ -5,7 +5,7 @@ public class DestroyAtRandomTime : MonoBehaviour
     public GameObject sadConfetti;
 
     public int minTime, maxTime;
-    private float destroyT; //po jakim czasie ma nast¹piæ usuniêcie obiektu
+    private float destroyT = 0f; //po jakim czasie ma nast¹piæ usuniêcie obiektu
     private float destroyTimer = 0f;//odliczanie czasu do usuniêcia
     void Start()
     {

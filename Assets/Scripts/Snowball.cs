@@ -18,10 +18,12 @@ public class Snowball : MonoBehaviour
     {
         alreadyThrown = false;
         audioSource = gameObject.GetComponent<AudioSource>();
+       
     }
     
     public void Throw()
     {
+        audioSource.gameObject.SetActive(true);
         audioSource.Play();
 
         alreadyThrown = true;
